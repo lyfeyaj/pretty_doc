@@ -7,7 +7,7 @@ module PrettyDoc
     class << self
       def run!(args)
         options = OpenStruct.new
-        options.template = 'simple'
+        options.template = 'default'
         options.output = File.expand_path('.')
         options.files = []
         options.enable_line_numbers = false
