@@ -16,17 +16,14 @@ module PrettyDoc
         .gsub(/\[TOC\]\n/, "+ __toc_line__\n{:toc}\n")
     end
 
+    private
+
     def convert
       before_convert
       html = Kramdown::Document.new(
-        content,
-        input: :GFM,
-        enable_coderay: false,
-        toc_levels: [1, 2, 3, 4, 5, 6]
+        content, input: :GFM, enable_coderay: false
       ).to_html
-
       doc = Nokogiri::HTML::DocumentFragment.parse(html)
-
       figure_role(doc)
       code_block(doc)
       doc.to_html
@@ -63,7 +60,8 @@ module PrettyDoc
     end
 
     def tableize_code (str, lang = '')
-      line_number = code = ''
+      line_number = ''
+      code = ''
       str.lines.each_with_index do |line, index|
         line_number += "<span class='line-number'>#{index + 1}</span>\n"
         code += "<span class='line'>#{line}</span>"

@@ -15,5 +15,11 @@ module PrettyDoc
     def self.descendants
       ObjectSpace.each_object(Class).select { |klass| klass < self }
     end
+
+    private
+
+    # Convert Markdown to Html
+    def convert
+    end
   end
 end
