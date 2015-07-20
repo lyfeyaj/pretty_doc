@@ -49,7 +49,7 @@ module PrettyDoc
           exit
         end
         options.template = PrettyDoc.template(options.template)
-        PrettyDoc::Plugin::Source.build(options)
+        PrettyDoc::Resource::Source.build(options)
       end
     end
   end

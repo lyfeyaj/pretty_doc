@@ -1,10 +1,11 @@
 require 'fileutils'
 
 module PrettyDoc
-  # Base Plugin Class
-  class Plugin
+  # Base Resource Class
+  class Resource
     attr_accessor :file
-    def write(file_dir_io, options = {})
+
+    def write(file_dir, options = {})
     end
   end
 end

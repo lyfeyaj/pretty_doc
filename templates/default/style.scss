@@ -248,6 +248,9 @@ article {
       code {
         span {
           font-family: monospace !important;
+          word-break: break-all;
+          white-space: pre-wrap;
+          word-wrap: break-word;
         }
       }
     }

@@ -177,6 +177,11 @@ article {
     margin: 0;
     padding: 0;
     background: transparent;
+    span {
+      word-break: break-all;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
   }
 
   .c  { color: #999988; font-style: italic } /* Comment */

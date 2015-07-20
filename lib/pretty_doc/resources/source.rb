@@ -1,9 +1,9 @@
-require 'pretty_doc/plugin'
+require 'pretty_doc/resource'
 
 module PrettyDoc
-  class Plugin
-    # Source Plugin
-    class Source < Plugin
+  class Resource
+    # Source Resource
+    class Source < Resource
       attr_accessor :content, :basename
 
       def initialize(file, converter)

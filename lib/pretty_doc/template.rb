@@ -1,4 +1,4 @@
-require 'pretty_doc/plugins/compass'
+require 'pretty_doc/resources/scss'
 require 'erb'
 
 module PrettyDoc
@@ -23,7 +23,7 @@ module PrettyDoc
     end
 
     def assets
-      [Plugin::Compass.new(dir)]
+      [Resource::Scss.new(dir)]
     end
 
     def render(hash)

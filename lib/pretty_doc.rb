@@ -7,7 +7,7 @@ end
 require 'pretty_doc/version'
 require 'pretty_doc/template'
 require 'pretty_doc/markdown'
-require 'pretty_doc/plugins/source'
+require 'pretty_doc/resources/source'
 
 # PrettyDoc Module
 module PrettyDoc

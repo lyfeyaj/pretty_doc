@@ -1,12 +1,12 @@
 require 'tempfile'
 require 'compass'
 require 'compass/exec'
-require 'pretty_doc/plugin'
+require 'pretty_doc/resource'
 
 module PrettyDoc
-  class Plugin
-    # Compass plugin
-    class Compass < Plugin
+  class Resource
+    # Scss resource
+    class Scss < Resource
       attr_accessor :scss_pathname
 
       def initialize(scss_pathname)
