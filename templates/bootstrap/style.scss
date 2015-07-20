@@ -131,11 +131,11 @@ article {
 
     code {
       font-size: inherit;
+      white-space: pre;
       @include experimental(tab-size, 4);
     }
   }
 }
-
 
 .highlight {
   padding: 8px;
@@ -177,11 +177,6 @@ article {
     margin: 0;
     padding: 0;
     background: transparent;
-    span {
-      word-break: break-all;
-      white-space: pre-wrap;
-      word-wrap: break-word;
-    }
   }
 
   .c  { color: #999988; font-style: italic } /* Comment */
@@ -246,6 +241,9 @@ article {
   .il { color: #009999 } /* Literal.Number.Integer.Long */
 }
 
+.no-lines {
+  @include box-shadow(none);
+}
 
 @media print {
   .highlight pre {

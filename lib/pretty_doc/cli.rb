@@ -10,6 +10,7 @@ module PrettyDoc
         options.template = 'simple'
         options.output = File.expand_path('.')
         options.files = []
+        options.enable_line_numbers = false
 
         opts_parser = OptionParser.new do |opts|
           opts.banner = 'Pretty document empowered by markup language.'
@@ -40,14 +41,21 @@ module PrettyDoc
           opts.on('-t', '--template [folder]', 'choose a template') do |tmpl|
             options.template = tmpl
           end
+
+          opts.on('-l', '--line-numbers', 'enable line numbers for codes') do
+            options.enable_line_numbers = true
+          end
         end
+
         opts_parser.parse!(args)
+
         options.files = args
         options.files = Dir.glob('./*.md') if options.files.length == 0
         if options.files.length == 0
           puts opts_parser
           exit
         end
+
         options.template = PrettyDoc.template(options.template)
         PrettyDoc::Resource::Source.build(options)
       end

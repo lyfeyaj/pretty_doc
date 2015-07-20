@@ -1,7 +1,7 @@
 module PrettyDoc
   # Common Converter Class that will be inherited
   class Converter
-    attr_accessor :content
+    attr_accessor :content, :options
 
     def as_html
       convert
@@ -18,7 +18,7 @@ module PrettyDoc
 
     private
 
-    # Convert Markdown to Html
+    # Convert Markdown to Html, implement this method to convert content
     def convert
     end
   end

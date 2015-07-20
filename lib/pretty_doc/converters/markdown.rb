@@ -60,20 +60,28 @@ module PrettyDoc
     end
 
     def tableize_code (str, lang = '')
-      line_number = ''
+      line_numbers = ''
       code = ''
       str.lines.each_with_index do |line, index|
-        line_number += "<span class='line-number'>#{index + 1}</span>\n"
+        line_numbers += "<span class='line-number'>#{index + 1}</span>\n" if options.enable_line_numbers
         code += "<span class='line'>#{line}</span>"
       end
 
+      if options.enable_line_numbers
+        line_numbers = <<-HTML
+          <td class="lines">
+            <pre class="line-numbers">#{line_numbers}</pre>
+          </td>
+        HTML
+      end
+
+      no_line_numbers_class = options.enable_line_numbers ? '' : 'no-lines'
+
       table = <<-HTML
-        <div class="highlight">
+        <div class="highlight #{no_line_numbers_class}">
           <table>
             <tr>
-              <td class="lines">
-                <pre class="line-numbers">#{line_number}</pre>
-              </td>
+              #{line_numbers}
               <td class="code">
                 <pre><code>#{code}</code></pre>
               </td>
