@@ -1,0 +1,63 @@
+$baseSize: 12pt;
+$baseLineHeight: $baseSize * 1.4;
+
+$normalText:              #333;
+$normalBackground:        #f5f5f5;
+$normalBorder:            darken(adjust-hue($normalBackground, -10), 7%) !default;
+
+$warningText:             #c09853 !default;
+$warningBackground:       #fcf8e3 !default;
+$warningBorder:           darken(adjust-hue($warningBackground, -10), 3%) !default;
+
+$errorText:               #b94a48 !default;
+$errorBackground:         #f2dede !default;
+$errorBorder:             darken(adjust-hue($errorBackground, -10), 3%) !default;
+
+$successText:             #468847 !default;
+$successBackground:       #dff0d8 !default;
+$successBorder:           darken(adjust-hue($successBackground, -10), 5%) !default;
+
+$infoText:                #3a87ad !default;
+$infoBackground:          #d9edf7 !default;
+$infoBorder:              darken(adjust-hue($infoBackground, -10), 7%) !default;
+
+.box {
+  padding: ($baseSize * 0.5) ($baseSize * 1);
+  border-radius: 0.3em;
+  background-color: $normalBackground;
+  border: 1px solid $normalBorder;
+}
+
+.box-warning {
+  @extend .box;
+  background-color: $warningBackground;
+  border-color: $warningBorder;
+  color: $warningText;
+}
+
+.box-success {
+  @extend .box;
+  background-color: $successBackground;
+  border-color: $successBorder;
+  color: $successText;
+}
+
+.box-info {
+  @extend .box;
+  background-color: $infoBackground;
+  border-color: $infoBorder;
+  color: $infoText;
+}
+
+.box-normal {
+  @extend .box;
+  background-color: $normalBackground;
+  border-color: 1px solid $normalBorder;
+}
+
+.box-error, .box-danger {
+  @extend .box;
+  background-color: $errorBackground;
+  border-color: $errorBorder;
+  color: $errorText;
+}

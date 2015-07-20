@@ -1,0 +1,8 @@
+#! /usr/bin/env ruby
+
+lib_path = File.expand_path('../../lib', __FILE__)
+$:.unshift(lib_path)
+
+require 'pretty_doc/cli'
+
+PrettyDoc::Cli.run!(ARGV)
