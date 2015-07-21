@@ -16,7 +16,7 @@ module PrettyDoc
     try_load_template_from_gem name
     try_load_template_from_dir name
     try_load_template_from_defaults name
-    tmpl = Template.get(name)
+    tmpl = Template.get(File.basename(name))
     if @template_loaded && tmpl
       tmpl
     else
@@ -39,7 +39,7 @@ module PrettyDoc
   def self.try_load_template_from_dir(name = '')
     if !@template_loaded && Dir.exist?(File.expand_path(name))
       begin
-        require "#{File.expand_path(name)}/init.rb"
+        require File.join(File.expand_path(name), 'init.rb')
         @template_loaded = true
       rescue LoadError
         @template_loaded = false

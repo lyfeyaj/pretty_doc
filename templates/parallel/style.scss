@@ -1,6 +1,6 @@
 html { height: 100%; }
 body {
-  font-family: Menlo, Monaco, Consolas, "Lucida Console", monospace;
+  font-family: Menlo, Consolas, Monaco, monospace;
   font-size: 14px;
   line-height: 18px;
   color: #30404f;
@@ -21,11 +21,11 @@ li {
 }
 
 a {
-  color: #333;
   text-decoration: none;
+  color: #4484C2;
+
   &:hover {
-    font-weight: 900;
-    color: darken(#333, 30%);
+    color: #48D848;
   }
 }
 
@@ -49,16 +49,37 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 10px;
   color: #112233;
   line-height: 1em;
-  font-weight: normal;
+  font-weight: bold;
   text-transform: uppercase;
   margin: 30px 0 15px 0;
 }
 
+
+$header-font-size: 1.4em;
 h1 {
   margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: $header-font-size * 1.1;
 }
+
 h2 {
-  font-size: 1.26em;
+  font-size: $header-font-size * 1.0;
+}
+
+h3 {
+  font-size: $header-font-size * 0.9;
+}
+
+h4 {
+  font-size: $header-font-size * 0.8;
+}
+
+h5 {
+  font-size: $header-font-size * 0.7;
+}
+
+h6 {
+  font-size: $header-font-size * 0.6;
 }
 
 hr {
@@ -141,11 +162,21 @@ ul.sections > li > div {
   }
 
   a {
+    color: #333;
     text-decoration: none;
+    &:hover {
+      font-weight: 900;
+      color: darken(#333, 30%);
+    }
   }
 
   a.large {
     display: none;
+  }
+
+  a.active {
+    font-weight: 900;
+    color: darken(#333, 30%);
   }
 
   a.small {

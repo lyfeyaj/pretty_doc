@@ -14,5 +14,23 @@
     var bodyEl = document.getElementsByTagName('body')[0];
     var markdownToc = document.getElementById('markdown-toc');
     bodyEl.appendChild(markdownToc);
+
+    var hash = location.hash.replace('#', '');
+
+    // Set init highlight anchor
+    if (hash) {
+      var activeAnchor = document.getElementById('markdown-toc-' + hash);
+      if (activeAnchor) {
+        activeAnchor.classList.add('active');
+      }
+    }
+
+    markdownToc.onclick = function(e) {
+      var activeAnchor = document.querySelector('a.active');
+      if (activeAnchor) {
+        activeAnchor.classList.remove('active');
+      }
+      e.target.classList.add('active')
+    }
   </script>
 </html>
