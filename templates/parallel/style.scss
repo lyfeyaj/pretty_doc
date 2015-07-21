@@ -1,3 +1,6 @@
+@import "compass";
+@import "normalize";
+
 html { height: 100%; }
 body {
   font-family: Menlo, Consolas, Monaco, monospace;
@@ -14,6 +17,52 @@ body {
   display: block;
   height: 100%;
   overflow-y: auto;
+}
+
+.highlight  {
+  width: 96%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: inline-block;
+  overflow: hidden;
+
+  table {
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+    table-layout: fixed;
+
+    tbody {
+      width: 100%;
+
+      tr {
+        width: 100%;
+
+        td {
+          -moz-box-shadow:    inset 0 0 10px rgba(0,0,0,0.1);
+          -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+          box-shadow:         inset 0 0 10px rgba(0,0,0,0.1);
+          padding: 7px 10px;
+          background: #fcfcfc;
+        }
+
+        .lines {
+          width: 5%;
+          text-align: right;
+          // padding-right: 2px;
+        }
+
+        pre {
+          width: 100%;
+
+          code {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+  }
 }
 
 li {
@@ -92,24 +141,21 @@ hr {
 pre, tt, code {
   font-size: 12px; line-height: 16px;
   margin: 0; padding: 0;
-  overflow-x: auto;
 }
-  .annotation pre {
-    display: block;
-    margin: 0;
-    padding: 7px 10px;
-    background: #fcfcfc;
-    -moz-box-shadow:    inset 0 0 10px rgba(0,0,0,0.1);
-    -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
-    box-shadow:         inset 0 0 10px rgba(0,0,0,0.1);
-    overflow-x: auto;
-  }
-    .annotation pre code {
-      border: 0;
-      padding: 0;
-      background: transparent;
-    }
 
+pre {
+  display: block;
+  margin: 0;
+  padding: 4px;
+
+  code {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    display: block;
+    color: #000;
+  }
+}
 
 blockquote {
   border-left: 5px solid #ccc;
@@ -126,7 +172,7 @@ blockquote {
 
 ul.sections {
   list-style: none;
-  padding:0 0 5px 0;;
+  padding: 0 0 5px 0;;
   margin:0;
 }
 
@@ -154,8 +200,10 @@ ul.sections > li > div {
   font-size: 0.8em;
   margin: 0;
   background: white;
-  -webkit-box-shadow: 0 0 25px #777; -moz-box-shadow: 0 0 25px #777;
-  -webkit-border-bottom-left-radius: 5px; -moz-border-radius-bottomleft: 5px;
+  -webkit-box-shadow: 0 0 25px #777;
+  -moz-box-shadow: 0 0 25px #777;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomleft: 5px;
 
   li {
     list-style: none;
@@ -186,12 +234,24 @@ ul.sections > li > div {
   }
 }
 
+@media only screen and (max-width: 320px) {
+  #container {
+    position: relative;
+    width: 100%;
+    left: 0;
+  }
+
+  #markdown-toc {
+    position: relative;
+    top: 0;
+  }
+}
+
 
 /*---------------------- Low resolutions (> 320px) ---------------------*/
 @media only screen and (min-width: 320px) {
   #container {
-    width: 300px;
-    left: 100px;
+    width: 100%;
   }
 
   .pilwrap { display: none; }
@@ -231,7 +291,7 @@ ul.sections > li > div {
 @media only screen and (min-width: 481px) {
   #container {
     position: relative;
-    width: 500px;
+    width: 100%;
     left: 200px;
   }
   body {
@@ -241,7 +301,6 @@ ul.sections > li > div {
   }
   pre, tt, code {
     line-height: 18px;
-    max-width: 400px;
   }
   p, ul, ol {
     margin: 0 0 15px;
@@ -340,17 +399,18 @@ ul.sections > li > div {
   }
 
   #container {
-    left: 400px;
-    width: 850px;
+    left: 28%;
+    width: 72%;
   }
 
   #markdown-toc {
-    width: 300px;
+    width: 24%;
   }
 
   #background {
     width: 525px;
   }
+
   ul.sections > li > div.annotation {
     max-width: 525px;
     min-width: 525px;
@@ -358,9 +418,6 @@ ul.sections > li > div {
   }
   ul.sections > li > div.content {
     padding: 9px 15px 16px 25px;
-  }
-  pre, tt, code {
-    max-width: 800px;
   }
 }
 
@@ -372,7 +429,6 @@ ul.sections > li > div {
     padding-right: 10px;
   }
   span {
-    background-color: #f0f0f0;
     padding: 0 5px 0 5px;
   }
 }
@@ -383,12 +439,6 @@ ul.sections > li > div {
 github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 */
-
-pre code {
-  display: block; padding: 0.5em;
-  color: #000;
-  background: #f8f8ff
-}
 
 .highlight .hll { background-color: #ffffcc }
 .highlight .c { color: #60a0b0; font-style: italic } /* Comment */
