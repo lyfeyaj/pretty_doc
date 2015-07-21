@@ -7,6 +7,17 @@ html, body {
   padding: 0;
 }
 
+li {
+  list-style: none;
+
+  a {
+    text-decoration: none;
+    &:hover {
+      color: darken(#0088cc, 20%);
+    }
+  }
+}
+
 @media print {
   @page {
     margin: 1cm;
@@ -236,6 +247,9 @@ article {
       border-left: 0;
       background-color: #f7f7f9;
       border-radius: 0 0.3em 0.3em 0;
+      pre {
+        width: 17.0cm;
+      }
     }
 
     pre {
@@ -243,7 +257,6 @@ article {
       margin: 0;
       padding: 0;
       background: transparent;
-      width: 18.5cm;
 
       code {
         span {

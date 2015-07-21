@@ -21,7 +21,10 @@ module PrettyDoc
     def convert
       before_convert
       html = Kramdown::Document.new(
-        content, input: :GFM, enable_coderay: false
+        content,
+        input: :GFM,
+        enable_coderay: false,
+        transliterated_header_ids: true
       ).to_html
       doc = Nokogiri::HTML::DocumentFragment.parse(html)
       figure_role(doc)

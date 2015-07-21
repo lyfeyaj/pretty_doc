@@ -10,4 +10,9 @@
       <%= @content %>
     </article>
   </body>
+  <script type="text/javascript">
+    var bodyEl = document.getElementsByTagName('body')[0];
+    var markdownToc = document.getElementById('markdown-toc');
+    bodyEl.appendChild(markdownToc);
+  </script>
 </html>
