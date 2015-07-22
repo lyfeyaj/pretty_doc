@@ -43,6 +43,24 @@ gem install pretty_doc
 #     -h, --help                       output usage information
 ```
 
+## Generate TOC
+
+Use `[TOC]` or `{:toc}` in your markdown file to generate table of contents and use `[NO_TOC]` or `{:.no_toc}` to ignore specific header.
+
+Example:
+
+``` markdown
+Pretty Doc
+==========
+[NO_TOC]
+
+[TOC]
+
+## Feature
+
+## Usage
+```
+
 ## Create a custom template
 
 template structure
