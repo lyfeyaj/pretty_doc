@@ -13,7 +13,7 @@ module PrettyDoc
         options.enable_line_numbers = false
 
         opts_parser = OptionParser.new do |opts|
-          opts.banner = 'Pretty document empowered by markup language.'
+          opts.banner = 'Pretty document empowered by markdown language.'
           opts.separator ''
           opts.separator 'Usage: pretty_doc [options] files'
           opts.separator ''
@@ -49,9 +49,16 @@ module PrettyDoc
 
         opts_parser.parse!(args)
 
-        options.files = args
-        options.files = Dir.glob('./*.md') if options.files.length == 0
+        if args.length == 0
+          options.files = Dir.glob('./*.md')
+        else
+          args.each do |arg|
+            options.files.concat(Dir.glob(arg))
+          end
+        end
+
         if options.files.length == 0
+          puts 'No file found'
           puts opts_parser
           exit
         end
