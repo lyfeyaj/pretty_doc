@@ -49,7 +49,7 @@ Use `[TOC]` or `{:toc}` in your markdown file to generate table of contents and 
 
 Example:
 
-``` markdown
+```
 Pretty Doc
 ==========
 [NO_TOC]
