@@ -18,6 +18,7 @@
       <li><a href="#examples" id="markdown-toc-examples">Examples</a></li>
       <li><a href="#installation" id="markdown-toc-installation">Installation</a></li>
       <li><a href="#usage" id="markdown-toc-usage">Usage</a></li>
+      <li><a href="#generate-toc" id="markdown-toc-generate-toc">Generate TOC</a></li>
       <li><a href="#create-a-custom-template" id="markdown-toc-create-a-custom-template">Create a custom template</a></li>
       <li><a href="#todo" id="markdown-toc-todo">TODO</a></li>
     </ul>
@@ -84,6 +85,24 @@
           </table>
         </div>
 
+
+<h2 id="generate-toc">Generate TOC</h2>
+
+<p>Use <code>[TOC]</code> or <code>{:toc}</code> in your markdown file to generate table of contents and use <code>[NO_TOC]</code> or <code>{:.no_toc}</code> to ignore specific header.</p>
+
+<p>Example:</p>
+
+<pre><code>Pretty Doc
+==========
+{:.no_toc}
+
++ __toc_line__
+{:toc}
+
+## Feature
+
+## Usage
+</code></pre>
 
 <h2 id="create-a-custom-template">Create a custom template</h2>
 
