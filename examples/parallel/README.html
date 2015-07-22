@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <article id='container'>
+      <h1 id="pretty-doc">Pretty Doc</h1>
+
+<p>Pretty Doc is quick and convenient markdown to html converter with beautiful templates, aiming to provide a simple tool to generate beautiful docs for common use.</p>
+
+<ul id="markdown-toc">
+  <li>
+<a href="#pretty-doc" id="markdown-toc-pretty-doc">Pretty Doc</a>    <ul>
+      <li><a href="#features" id="markdown-toc-features">Features</a></li>
+      <li><a href="#examples" id="markdown-toc-examples">Examples</a></li>
+      <li><a href="#installation" id="markdown-toc-installation">Installation</a></li>
+      <li><a href="#usage" id="markdown-toc-usage">Usage</a></li>
+      <li><a href="#create-a-custom-template" id="markdown-toc-create-a-custom-template">Create a custom template</a></li>
+      <li><a href="#todo" id="markdown-toc-todo">TODO</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="features">Features</h2>
+
+<ul>
+  <li>Beautiful built-in templates: <code>default</code>, <code>bootstrap</code>, <code>parallel</code>
+</li>
+  <li>Code highlight</li>
+  <li>Markdown TOC supports</li>
+  <li>Easy to customize template</li>
+  <li>Support GFM( GitHub Flavored Markdown ) syntax</li>
+</ul>
+
+<h2 id="examples">Examples</h2>
+
+<ul>
+  <li><a href="https://lyfeyaj.github.io/pretty_doc/examples/default/README.html">Template Default</a></li>
+  <li><a href="https://lyfeyaj.github.io/pretty_doc/examples/bootstrap/README.html">Template Bootstrap</a></li>
+  <li><a href="https://lyfeyaj.github.io/pretty_doc/examples/parallel/README.html">Template Parallel</a></li>
+</ul>
+
+<h2 id="installation">Installation</h2>
+
+<p>Pretty Doc is relied on <code>ruby</code> environment. Please make sure that your system has <code>ruby</code> installed.</p>
+
+        <div class="highlight no-lines">
+          <table>
+            <tr>
+              
+              <td class="code">
+                <pre><code><span class="line">gem install pretty_doc
+</span></code></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+
+<h2 id="usage">Usage</h2>
+
+        <div class="highlight no-lines">
+          <table>
+            <tr>
+              
+              <td class="code">
+                <pre><code><span class="line"><span class="c"># Usage: pretty_doc [options] files</span>
+</span><span class="line"><span class="c">#</span>
+</span><span class="line"><span class="c"># Options:</span>
+</span><span class="line"><span class="c">#</span>
+</span><span class="line"><span class="c">#     -o, --output [path]              output to a given folder</span>
+</span><span class="line"><span class="c">#     -t, --template [folder]          choose a template</span>
+</span><span class="line"><span class="c">#     -l, --line-numbers               enable line numbers for codes</span>
+</span><span class="line"><span class="c">#     -v, --version                    output the version number</span>
+</span><span class="line"><span class="c">#     -h, --help                       output usage information</span>
+</span></code></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+
+<h2 id="create-a-custom-template">Create a custom template</h2>
+
+<p>template structure</p>
+
+<pre><code>├── init.rb
+├── style.scss
+└── template.html.erb
+</code></pre>
+
+<h2 id="todo">TODO</h2>
+
+<ul>
+  <li>Add docs for how to create a custom template</li>
+</ul>
+
+    </article>
+  </body>
+  <script type="text/javascript">
+    var bodyEl = document.getElementsByTagName('body')[0];
+    var markdownToc = document.getElementById('markdown-toc');
+    bodyEl.appendChild(markdownToc);
+
+    var hash = location.hash.replace('#', '');
+
+    // Set init highlight anchor
+    if (hash) {
+      var activeAnchor = document.getElementById('markdown-toc-' + hash);
+      if (activeAnchor) {
+        activeAnchor.classList.add('active');
+      }
+    }
+
+    markdownToc.onclick = function(e) {
+      var activeAnchor = document.querySelector('a.active');
+      if (activeAnchor) {
+        activeAnchor.classList.remove('active');
+      }
+      e.target.classList.add('active')
+    }
+  </script>
+</html>
