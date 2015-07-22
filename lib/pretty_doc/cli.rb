@@ -53,6 +53,9 @@ module PrettyDoc
           options.files = Dir.glob('./*.md')
         else
           args.each do |arg|
+            if File.directory? arg
+              arg = File.join(File.expand_path(arg), '*.md')
+            end
             options.files.concat(Dir.glob(arg))
           end
         end
