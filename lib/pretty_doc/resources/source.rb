@@ -37,7 +37,7 @@ module PrettyDoc
             result = new(file, converter, options)
             result.write(output_dir, options)
           else
-            puts 'No corresponding converter found!'
+            puts "No corresponding converter found for file `#{file}`"
           end
         end
       end

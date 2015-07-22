@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'pygments.rb', '~> 0.6.3'
   s.add_dependency 'compass', '~> 1.0.3'
   s.add_dependency 'bootstrap-sass', '~> 3.3.5'
+  s.add_dependency 'stringex', '~> 2.5.2'
 
   s.add_development_dependency 'bundler', ['>= 1.0.0']
   s.add_development_dependency 'rake', ['>= 0']
