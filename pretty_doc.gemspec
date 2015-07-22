@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.version       = PrettyDoc::VERSION
   s.authors       = ['lyfeyaj']
   s.email         = ['lyfeyaj@gmail.com']
-  s.description   = 'Pretty document empowered by markup language'
-  s.summary       = 'Pretty document empowered by markup language'
+  s.description   = 'Pretty Doc is quick and convenient markdown to html converter with beautiful templates, aiming to provide a simple tool to generate beautiful docs for common use.'
+  s.summary       = 'Pretty Doc is quick and convenient markdown to html converter with beautiful templates, aiming to provide a simple tool to generate beautiful docs for common use.'
   s.homepage      = 'https://github.com/lyfeyaj/pretty_doc'
   s.license       = 'MIT'
 
@@ -19,9 +19,9 @@ Gem::Specification.new do |s|
   s.test_files    = s.files.grep(%r{^(test|spec|features)/})
   s.require_paths = ['lib']
 
-  s.add_dependency 'nokogiri'
-  s.add_dependency 'kramdown'
-  s.add_dependency 'pygments.rb'
+  s.add_dependency 'nokogiri', '~> 1.6.6'
+  s.add_dependency 'kramdown', '~> 1.8.0'
+  s.add_dependency 'pygments.rb', '~> 0.6.3'
   s.add_dependency 'compass', '~> 1.0.3'
   s.add_dependency 'bootstrap-sass', '~> 3.3.5'
 
