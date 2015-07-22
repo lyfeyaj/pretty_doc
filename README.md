@@ -19,6 +19,8 @@ Pretty Doc is quick and convenient markdown to html converter with beautiful tem
 + [Template Bootstrap](https://lyfeyaj.github.io/pretty_doc/examples/bootstrap/README.html)
 + [Template Parallel](https://lyfeyaj.github.io/pretty_doc/examples/parallel/README.html)
 
+![Template Parallel](images/preview.png)
+
 ## Installation
 
 Pretty Doc is relied on `ruby` environment. Please make sure that your system has `ruby` installed.
