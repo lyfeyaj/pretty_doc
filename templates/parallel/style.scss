@@ -12,6 +12,14 @@ body {
   overflow: hidden;
 }
 
+img, .thumbnail {
+  page-break-inside: avoid;
+}
+
+img, video {
+  max-width: 100%;
+}
+
 #container {
   position: absolute;
   display: block;
