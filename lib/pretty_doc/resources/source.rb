@@ -10,7 +10,7 @@ module PrettyDoc
         self.file = file
         extname = File.extname(file)
         self.basename = File.basename(file, extname)
-        converter.content = File.read(self.file)
+        converter.content = File.read(self.file, encoding: 'utf-8')
         converter.options = options
         self.content = converter.as_html
       end
