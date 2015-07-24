@@ -74,3 +74,6 @@ template structure
 ## TODO
 
 + Add docs for how to create a custom template
++ Add file toc support
++ Optimize templates for Windows
++ Add custom fonts and javascripts supports
