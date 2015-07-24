@@ -4,11 +4,12 @@ require 'pretty_doc'
 
 module PrettyDoc
   class Cli
+    DEFAULT_OUTPUT_DIR = './out'
     class << self
       def run!(args)
         options = OpenStruct.new
         options.template = 'default'
-        options.output = File.expand_path('.')
+        options.output = output_dir(DEFAULT_OUTPUT_DIR)
         options.files = []
         options.enable_line_numbers = false
 
@@ -30,19 +31,16 @@ module PrettyDoc
             exit
           end
 
-          opts.on('-o', '--output [path]', 'output to a given folder') do |o|
-            options.output = File.expand_path(o || '.')
-            if !Dir.exist? options.output
-              puts "Directory #{options.output} is not exists, creating new..."
-              FileUtils.mkdir_p(options.output)
-            end
+          opts.on('-o', '--output [path]', 'output to a given folder, default is `./out`') do |o|
+            options.output = output_dir(o || DEFAULT_OUTPUT_DIR)
+
           end
 
           opts.on('-t', '--template [folder]', 'choose a template') do |tmpl|
             options.template = tmpl
           end
 
-          opts.on('-l', '--line-numbers', 'enable line numbers for codes') do
+          opts.on('-l', '--line-numbers', 'enable line numbers for code highlight') do
             options.enable_line_numbers = true
           end
         end
@@ -68,6 +66,18 @@ module PrettyDoc
 
         options.template = PrettyDoc.template(options.template)
         PrettyDoc::Resource::Source.build(options)
+      end
+
+      private
+
+      def output_dir(path)
+        path = File.expand_path(path)
+        if !Dir.exist? path
+          puts "Directory #{path} is not exists, creating new..."
+          FileUtils.mkdir_p(path)
+        else
+          path
+        end
       end
     end
   end

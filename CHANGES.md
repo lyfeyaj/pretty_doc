@@ -1,6 +1,11 @@
+1.0.3
+-----------
+- Fix `GBK` encoding error on windows
+- Adjust default output dir to `./out`
+
 1.0.2
 -----------
-- fix parallel style for image, video tag
+- Fix parallel style for image, video tag
 
 1.0.1
 -----------
