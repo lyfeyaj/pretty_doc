@@ -1,4 +1,5 @@
 require 'pretty_doc/resources/scss'
+require 'pretty_doc/resources/javascript'
 require 'erb'
 
 module PrettyDoc
@@ -23,7 +24,7 @@ module PrettyDoc
     end
 
     def assets
-      [Resource::Scss.new(dir)]
+      [Resource::Scss.new(dir), Resource::Javascript.new(dir)]
     end
 
     def render(hash)
