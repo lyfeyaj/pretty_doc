@@ -4,33 +4,21 @@
     <meta charset="utf-8">
     <title><%= @title %></title>
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link href="http://cdn.bootcss.com/jstree/3.2.1/themes/default/style.min.css" rel="stylesheet">
   </head>
   <body>
     <article id='container'>
       <%= @content %>
     </article>
   </body>
-  <script type="text/javascript">
-    var bodyEl = document.getElementsByTagName('body')[0];
-    var markdownToc = document.getElementById('markdown-toc');
-    bodyEl.appendChild(markdownToc);
-
-    var hash = location.hash.replace('#', '');
-
-    // Set init highlight anchor
-    if (hash) {
-      var activeAnchor = document.getElementById('markdown-toc-' + hash);
-      if (activeAnchor) {
-        activeAnchor.classList.add('active');
-      }
-    }
-
-    markdownToc.onclick = function(e) {
-      var activeAnchor = document.querySelector('a.active');
-      if (activeAnchor) {
-        activeAnchor.classList.remove('active');
-      }
-      e.target.classList.add('active')
-    }
+  <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+  <script src="http://cdn.bootcss.com/jstree/3.2.1/jstree.min.js"></script>
+  <script src="default.js"></script>
+  <script>
+    $(document).ready(function(){
+      init();
+    });
   </script>
+  <div id="tree">
+  </div>
 </html>
